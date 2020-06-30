@@ -50,7 +50,7 @@
                             {{ trans('shop.transaction.name') }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/transaction">{{ trans('shop.transaction.list') }}</a></li>
+                            <li><a href="{{url('/transaction')}}">{{ trans('shop.transaction.list') }}</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -58,8 +58,8 @@
                             {{ trans('shop.merchandise.name') }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/merchandise/create">{{ trans('shop.merchandise.create') }}</a></li>
-                            <li><a href="/merchandise/manage">{{ trans('shop.merchandise.manage') }}</a></li>
+                            <li><a href="{{url('/merchandise/create')}}">{{ trans('shop.merchandise.create') }}</a></li>
+                            <li><a href="{{url('/merchandise/manage')}}">{{ trans('shop.merchandise.manage') }}</a></li>
                         </ul>
                     </li>
                     <li><a href="{{url('/user/auth/sign-out')}}">{{ trans('shop.auth.sign-out') }}</a></li>

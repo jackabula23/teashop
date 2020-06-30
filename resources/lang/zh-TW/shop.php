@@ -16,6 +16,7 @@ return [
         'create'           => '建立商品',
         'manage'           => '管理商品',
         'edit'             => '編輯商品',
+        'delete'           => '刪除商品',
         'list'             => '商品列表',
         'page'             => '商品頁',
         'purchase-success' => '購買成功',
