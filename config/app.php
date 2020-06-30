@@ -179,6 +179,8 @@ return [
 
         // 圖片處理
         Intervention\Image\ImageServiceProvider::class,
+        // 社群登入
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -230,6 +232,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         // 圖片處理
         'Image' => Intervention\Image\Facades\Image::class,
+        // 社群登入
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
