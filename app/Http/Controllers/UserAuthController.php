@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendSignUpMailJob;
 use Illuminate\Http\Request;
 use Mail;
 use Socialite;
@@ -78,12 +79,9 @@ class UserAuthController extends Controller
             'nickname' => $input['nickname']
         ];
 
-        Mail::send('email.signUpEmailNotification', $mail_binding, function ($mail) use($input) {
-            $mail->to($input['email']);
-            $mail->from('jackabula23@gmail.com');
-            $mail->subject('註冊成功');
-        });
-
+        // 派發"註冊成功通知信工作"
+        SendSignUpMailJob::dispatch($mail_binding)->onQueue('high');
+        
         return redirect('/user/auth/sign-in');
     }
 
@@ -236,11 +234,8 @@ class UserAuthController extends Controller
                     'email' => $input['email'],
                 ];
 
-                Mail::send('email.signUpEmailNotification', $mail_binding, function ($mail) use($input) {
-                    $mail->to($input['email']);
-                    $mail->from('jackabula23@gmail.com');
-                    $mail->subject('註冊成功');
-                });
+                // 派發"註冊成功通知信工作"
+                SendSignUpMailJob::dispatch($mail_binding)->onQueue('high');;
 
                 // 登入會員
                 // session 記錄會員編號
@@ -313,12 +308,9 @@ class UserAuthController extends Controller
                 'email' => $input['email'],
             ];
             
-            Mail::send('email.signUpEmailNotification', $mail_binding, function ($mail) use($input) {
-                $mail->to($input['email']);
-                $mail->from('jackabula23@gmail.com');
-                $mail->subject('註冊成功');
-            });
-        }
+            // 派發"註冊成功通知信工作"
+            SendSignUpMailJob::dispatch($mail_binding)->onQueue('high');;
+            }
         
         // 登入會員
         // session 紀錄會員編號

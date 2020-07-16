@@ -36,13 +36,13 @@ return [
     ],
 
     'facebook' => [
-        'client_id'     => env('FB_CLIENT_ID'),
-        'client_secret' => env('FB_CLIENT_SECRET'),
-        'redirect'      => env('FB_REDIRECT'),
+        'client_id'     => env('195070048557518'),
+        'client_secret' => env('a1d02d7abc7ba422fe948e0cfd2a923d'),
+        'redirect'      => env('https://127.0.0.1/teashop/public/user/auth/facebook-sign-in-callback'),
     ],
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => env('GITHUB_REDIRECT'),
+        'redirect' => env('http://127.0.0.1/teashop/public/user/auth/github-sign-in-callback'),
     ],
 ];
